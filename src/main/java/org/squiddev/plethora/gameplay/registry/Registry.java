@@ -14,6 +14,7 @@ import org.squiddev.plethora.gameplay.modules.ItemModule;
 import org.squiddev.plethora.gameplay.neural.ItemNeuralConnector;
 import org.squiddev.plethora.gameplay.neural.ItemNeuralInterface;
 import org.squiddev.plethora.gameplay.redstone.BlockRedstoneIntegrator;
+import org.squiddev.plethora.gameplay.tiny.BlockTinyTurtle;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -34,6 +35,7 @@ public final class Registry {
 	public static ItemKeyboard itemKeyboard;
 	public static BlockManipulator blockManipulator;
 	public static BlockRedstoneIntegrator blockRedstoneIntegrator;
+	public static BlockTinyTurtle blockTinyTurtle;
 
 	private static void addModule(IModule module) {
 		if (module instanceof IClientModule) {
@@ -72,6 +74,8 @@ public final class Registry {
 		addModule(blockRedstoneIntegrator = new BlockRedstoneIntegrator());
 
 		addModule(new RenderSquidOverlay());
+
+		addModule(blockTinyTurtle = new BlockTinyTurtle());
 	}
 
 	public static void preInit() {
